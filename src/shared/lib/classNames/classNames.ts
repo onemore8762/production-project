@@ -1,8 +1,6 @@
-type Mods = Record<string, boolean | string>
+type Mods = Record<string, boolean | string | undefined>
 
-type IClassNames = (cls: string, mods?: Mods, additional?: string[]) => string
-
-export const classNames: IClassNames = (cls: any, mods: any = {}, additional: Array<string | undefined> = []): string => {
+export const classNames = (cls: string, mods: Mods = {}, additional: string[] = []): string => {
   return [
     cls,
     ...additional.filter(Boolean),

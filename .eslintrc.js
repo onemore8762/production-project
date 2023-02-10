@@ -1,7 +1,8 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
+    jest: true
   },
   extends: [
     'plugin:react/recommended',
@@ -27,7 +28,7 @@ module.exports = {
   rules: {
     'react/jsx-indent': ['error', 4], // 4 - spaces
     'react/jsx-indent-props': ['error', 4], // 4 - spaces
-    // indent: [2, 2], // 2 - error, 4 - spaces
+    // indent: [2, 4], // 2 - error, 4 - spaces
     'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }], // 2 - error - Запретить расширения файлов, которые могут содержать JSX
     'import/no-unresolved': 'off', // Отключить правило, которое не позволяет импортировать модули, которые не были установлены через npm
     'import/prefer-default-export': 'off', // Отключить правило, которое требует, чтобы каждый модуль имел по крайней мере один экспорт по умолчанию,
