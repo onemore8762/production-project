@@ -6,22 +6,22 @@ import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher'
 import { useTranslation } from 'react-i18next'
 
 interface SidebarProps {
-  className?: string
+    className?: string
 }
 
 export const Sidebar: FC<SidebarProps> = ({ className = '' }) => {
-  const [collapsed, setCollapsed] = useState(false)
-  const { t } = useTranslation()
-  const toggle = (): void => {
-    setCollapsed(prevState => !prevState)
-  }
-  return (
-      <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-          <button type="button" onClick={toggle}> {t('Переключатель')}</button>
-          <div className={cls.switchers}>
-              <ThemeSwitcher/>
-              <LangSwitcher className={cls.lang}/>
-          </div>
-      </div>
-  )
+    const [collapsed, setCollapsed] = useState(false)
+    const { t } = useTranslation()
+    const toggle = (): void => {
+        setCollapsed(prevState => !prevState)
+    }
+    return (
+        <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+            <button type="button" onClick={toggle}> {t('Переключатель')}</button>
+            <div className={cls.switchers}>
+                <ThemeSwitcher/>
+                <LangSwitcher className={cls.lang}/>
+            </div>
+        </div>
+    )
 }
