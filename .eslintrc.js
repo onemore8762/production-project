@@ -9,12 +9,11 @@ module.exports = {
         'standard-with-typescript',
         'plugin:i18next/recommended'
     ],
-    overrides: [
-    ],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
-        project: ['./tsconfig.json'],
+        project: './tsconfig.json',
         tsconfigRootDir: __dirname,
         ecmaFeatures: {
             jsx: true
@@ -22,15 +21,22 @@ module.exports = {
     },
     plugins: [
         'react',
-        // '@typescript-eslint',
+        '@typescript-eslint',
         'i18next'
+    ],
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off'
+            }
+        }
     ],
     rules: {
         indent: 'off',
         'react/jsx-indent-props': [2, 'first'],
         'react/jsx-indent': ['error', 4], // 4 - spaces
         '@typescript-eslint/indent': ['error', 4, { ignoredNodes: ['JSXAttribute'] }],
-        // indent: [2, 4], // 2 - error, 4 - spaces
         'react/jsx-filename-extension': [
             2,
             { extensions: ['.js', '.jsx', '.ts', '.tsx'] }
@@ -50,9 +56,6 @@ module.exports = {
         'import/no-extraneous-dependencies': 'warn', // Отключить правило, которое запрещает импортировать модули, которые не указаны в package.json
         'no-underscore-dangle': 'off', // Отключить правило, которое запрещает использовать подчеркивание в идентификаторах
         '@typescript-eslint/strict-boolean-expressions': 'off', // Отключить правило, которое требует, чтобы выражения boolean были явными
-        // '@typescript-eslint/explicit-function-return-type': 'off', // Отключить правило, которое требует, чтобы функции и методы возвращали тип
-        // '@typescript-eslint/prefer-nullish-coalescing': 'off' // Отключить правило, которое предлагает использовать оператор объединения с null вместо логического ИЛИ
-        // '@typescript-eslint/naming-convention': 'off' // Отключить правило, которое требует, чтобы имена переменных соответствовали определенным шаблонам
         'i18next/no-literal-string': [
             'error',
             { markupOnly: true, onlyAttribute: [''] }
@@ -62,4 +65,5 @@ module.exports = {
     globals: {
         __IS_DEV__: true
     }
+
 }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "strictNullChecks": true,
     "outDir": "./dist/",
+    "strictNullChecks": true,
     // Подсвечивает все места где не указан тип
     // Однако это не означает, что теперь вовсе нельзя использовать any.
     // Это означает лишь, что в подобных ситуация разработчик должен явно писать any,
@@ -39,4 +39,10 @@
       "module": "CommonJS"
     }
   },
+  "include": [
+    "./config/jest/**.ts",
+    "./config/jest/**.tsx",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+  ]
 }

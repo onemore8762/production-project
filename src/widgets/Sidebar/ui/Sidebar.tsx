@@ -11,13 +11,16 @@ interface SidebarProps {
 
 export const Sidebar: FC<SidebarProps> = ({ className = '' }) => {
     const [collapsed, setCollapsed] = useState(false)
-    const { t } = useTranslation()
+    const { t } = useTranslation('translation')
     const toggle = (): void => {
         setCollapsed(prevState => !prevState)
     }
     return (
-        <div className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
-            <button type="button" onClick={toggle}> {t('Переключатель')}</button>
+        <div data-testid="sidebar"
+             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+            <button data-testid = "sidebar-toggle"
+                    type="button"
+                    onClick={toggle}> {t('Переключатель')}</button>
             <div className={cls.switchers}>
                 <ThemeSwitcher/>
                 <LangSwitcher className={cls.lang}/>
