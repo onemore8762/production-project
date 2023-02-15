@@ -9,8 +9,8 @@ module.exports = {
         'standard-with-typescript',
         'plugin:i18next/recommended'
     ],
-    parser: '@typescript-eslint/parser',
     parserOptions: {
+        parser: '@typescript-eslint/parser',
         ecmaVersion: 'latest',
         sourceType: 'module',
         project: './tsconfig.json',
@@ -60,7 +60,11 @@ module.exports = {
             'error',
             { markupOnly: true, onlyAttribute: [''] }
         ], // Предупреждение, если строка не является литеральной строкой
-        'max-len': ['error', { ignoreComments: true, code: 120 }] // Ошибка, если строка превышает 120 символов
+        'max-len': ['error', { ignoreComments: true, code: 120 }], // Ошибка, если строка превышает 120 символов
+        '@typescript-eslint/consistent-type-assertions': 'off', // export default
+        '@typescript-eslint/prefer-includes': 'off', // Предупреждение, если не используется метод includes
+        '@typescript-eslint/prefer-nullish-coalescing': 'off', // Предупреждение, если не используется оператор объединения с null
+        'react/display-name': 'warn' // Предупреждение, если компонент не имеет отображаемого имени
     },
     globals: {
         __IS_DEV__: true
