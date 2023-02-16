@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { Button, ThemeButton } from 'shared/ui/Button/Button'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 describe('buttons', () => {
     test('Test render', () => {
@@ -7,7 +7,7 @@ describe('buttons', () => {
         expect(screen.getByText('TEST')).toBeInTheDocument()
     })
     test('Test render2', () => {
-        const { getByText } = render(<Button theme={ThemeButton.CLEAR}>TEST</Button>)
+        const { getByText } = render(<Button theme={ButtonTheme.CLEAR}>TEST</Button>)
         expect(getByText('TEST')).toBeInTheDocument()
     })
 })
