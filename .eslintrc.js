@@ -62,7 +62,7 @@ module.exports = {
         '@typescript-eslint/prefer-nullish-coalescing': 'off', // Предупреждение, если не используется оператор объединения с null
         'react/display-name': 'warn', // Предупреждение, если компонент не имеет отображаемого имени
         'i18next/no-literal-string': [
-            'warn',
+            'error',
             { markupOnly: true, onlyAttribute: [''] }
         ]
     },

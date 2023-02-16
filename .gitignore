@@ -3,3 +3,4 @@ node_modules
 .idea
 # Project exclude paths
 /build/
+/storybook-static
