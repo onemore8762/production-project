@@ -4,3 +4,5 @@ node_modules
 # Project exclude paths
 /build/
 /storybook-static
+.loki/report.html
+.loki/report.json
