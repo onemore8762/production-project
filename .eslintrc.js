@@ -55,16 +55,16 @@ module.exports = {
         'import/extensions': 'off', // Отключить правило, которое требует, чтобы импорты имели расширения
         'import/no-extraneous-dependencies': 'warn', // Отключить правило, которое запрещает импортировать модули, которые не указаны в package.json
         'no-underscore-dangle': 'off', // Отключить правило, которое запрещает использовать подчеркивание в идентификаторах
-        '@typescript-eslint/strict-boolean-expressions': 'off', // Отключить правило, которое требует, чтобы выражения boolean были явными
-        'i18next/no-literal-string': [
-            'error',
-            { markupOnly: true, onlyAttribute: [''] }
-        ], // Предупреждение, если строка не является литеральной строкой
+        '@typescript-eslint/strict-boolean-expressions': 'off', // Отключить правило, которое требует, чтобы выражения boolean были явными// Предупреждение, если строка не является литеральной строкой
         'max-len': ['error', { ignoreComments: true, code: 120 }], // Ошибка, если строка превышает 120 символов
         '@typescript-eslint/consistent-type-assertions': 'off', // export default
         '@typescript-eslint/prefer-includes': 'off', // Предупреждение, если не используется метод includes
         '@typescript-eslint/prefer-nullish-coalescing': 'off', // Предупреждение, если не используется оператор объединения с null
-        'react/display-name': 'warn' // Предупреждение, если компонент не имеет отображаемого имени
+        'react/display-name': 'warn', // Предупреждение, если компонент не имеет отображаемого имени
+        'i18next/no-literal-string': [
+            'warn',
+            { markupOnly: true, onlyAttribute: [''] }
+        ]
     },
     globals: {
         __IS_DEV__: true
