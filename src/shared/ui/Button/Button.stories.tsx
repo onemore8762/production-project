@@ -20,11 +20,18 @@ Primary.args = {
     children: 'text'
 }
 
-export const Secondary = Template.bind({})
+export const Clear = Template.bind({})
 
-Secondary.args = {
+Clear.args = {
     children: 'text',
     theme: ButtonTheme.CLEAR
+}
+
+export const ClearInverted = Template.bind({})
+
+ClearInverted.args = {
+    children: 'text',
+    theme: ButtonTheme.BACKGROUND_INVERTED
 }
 
 export const Outline = Template.bind({})
