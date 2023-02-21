@@ -17,7 +17,6 @@ server.use(async (req, res, next) => {
     })
     next()
 })
-
 // Эндпоинт для логина
 server.post('/login', (req, res) => {
     try {
