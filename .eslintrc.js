@@ -62,7 +62,7 @@ module.exports = {
         '@typescript-eslint/consistent-type-assertions': 'off', // export default
         '@typescript-eslint/prefer-includes': 'off', // Предупреждение, если не используется метод includes
         '@typescript-eslint/prefer-nullish-coalescing': 'off', // Предупреждение, если не используется оператор объединения с null
-        'react/display-name': 'warn', // Предупреждение, если компонент не имеет отображаемого имени
+        'react/display-name': 'off', // Предупреждение, если компонент не имеет отображаемого имени
         'i18next/no-literal-string': [
             'error',
             { markupOnly: true, onlyAttribute: [''] }

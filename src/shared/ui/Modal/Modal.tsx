@@ -50,6 +50,9 @@ export const Modal: FC<ModalProps> = (
     const onContentClick = (e: MouseEvent): void => {
         e.stopPropagation()
     }
+    if (!isOpen) {
+        return null
+    }
 
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
