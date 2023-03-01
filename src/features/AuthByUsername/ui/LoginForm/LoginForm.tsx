@@ -70,7 +70,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                 <Button
                     theme={ButtonTheme.OUTLINE}
                     className={cls.loginBtn}
-                    onClick={onLoginClick}
+                    onClick={() => {
+                        void onLoginClick()
+                    }}
                     disabled={isLoading}
                 >
                     {t('Войти')}
