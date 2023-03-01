@@ -11,23 +11,25 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
         entry: '',
         src: path.resolve(__dirname, '..', '..', 'src')
     }
-    config.resolve.modules = [paths.src, 'node_modules']
-    config.resolve.extensions.push('.tsx', '.ts')
 
-    config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+    // @ts-ignore
+    config.resolve.modules = [paths.src, 'node_modules']
+    config.resolve?.extensions?.push('.tsx', '.ts')
+    // @ts-ignore
+    config.module?.rules = config.module?.rules?.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
             return { ...rule, exclude: /\.svg$/i }
         }
         return rule
     })
 
-    config.module.rules.push({
+    config.module?.rules?.push({
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         use: ['@svgr/webpack']
     })
-    config.module.rules.push(buildCssLoader(true))
-    config.plugins.push(new DefinePlugin({
+    config.module?.rules?.push(buildCssLoader(true))
+    config.plugins?.push(new DefinePlugin({
         __IS_DEV__: JSON.stringify(true),
         __API__: JSON.stringify('')
     }))

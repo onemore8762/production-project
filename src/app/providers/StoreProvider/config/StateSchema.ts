@@ -3,7 +3,7 @@ import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
 import {
     type AnyAction,
-    type CombinedState,
+    type CombinedState, type Dispatch,
     type EnhancedStore,
     type Reducer,
     type ReducersMapObject
@@ -36,7 +36,7 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
     api: AxiosInstance
-    navigate: (to: To, options?: NavigateOptions) => void
+    navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkConfig<T> {

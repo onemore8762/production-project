@@ -1,4 +1,12 @@
-import { type ChangeEvent, type InputHTMLAttributes, memo, type SyntheticEvent, useRef, useState } from 'react'
+import {
+    type ChangeEvent,
+    type InputHTMLAttributes,
+    memo,
+    type RefObject,
+    type SyntheticEvent,
+    useRef,
+    useState
+} from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Input.module.scss'
 
@@ -19,23 +27,24 @@ export const Input = memo((props: InputProps) => {
         placeholder,
         ...otherProps
     } = props
-    const ref = useRef<HTMLInputElement>()
+    // const ref = useRef<HTMLInputElement>()
+    const ref = useRef() as RefObject<HTMLInputElement>
     const [isFocused, setIsFocused] = useState(false)
     const [caretPosition, setCaretPosition] = useState(0)
 
-    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const onChangeHandler = (e: ChangeEvent<HTMLInputElement>): void => {
         onChange?.(e.target.value)
         setCaretPosition(e.target.value.length)
     }
 
-    const onBlur = () => {
+    const onBlur = (): void => {
         setIsFocused(false)
     }
 
-    const onFocus = () => {
+    const onFocus = (): void => {
         setIsFocused(true)
     }
-    const onSelect = (e: SyntheticEvent<HTMLInputElement, Event>) => {
+    const onSelect = (e: SyntheticEvent<HTMLInputElement, Event>): void => {
         setCaretPosition(e?.currentTarget?.selectionStart || 0)
     }
     return (

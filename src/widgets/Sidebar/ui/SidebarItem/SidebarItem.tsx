@@ -6,7 +6,7 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import { type SidebarItemType } from 'widgets/Sidebar/model/items'
 
 interface SidebarItemProps {
-    item?: SidebarItemType
+    item: SidebarItemType
     collapsed: boolean
 }
 

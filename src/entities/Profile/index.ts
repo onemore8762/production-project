@@ -2,9 +2,11 @@
 export type {
     Profile,
     ProfileSchema
-} from 'entities/Profile/modal/types/profile'
+} from 'entities/Profile/model/types/profile'
 
 export {
     profileSlice,
     profileReducer
-} from 'entities/Profile/modal/slice/profileSlice'
+} from 'entities/Profile/model/slice/profileSlice'
+
+export { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData'

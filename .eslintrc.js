@@ -68,7 +68,11 @@ module.exports = {
             { markupOnly: true, onlyAttribute: [''] }
         ],
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'error'
+        'react-hooks/exhaustive-deps': 'error',
+        '@typescript-eslint/ban-ts-comment': 'warn',
+        '@typescript-eslint/prefer-ts-expect-error': 'off'
+        // '@typescript-eslint/no-non-null-assertion': 'off',
+        // '@typescript-eslint/no-unnecessary-type-assertion': 'off'
     },
     globals: {
         __IS_DEV__: true,
