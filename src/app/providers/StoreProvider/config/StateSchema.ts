@@ -3,7 +3,7 @@ import { type UserSchema } from 'entities/User'
 import { type LoginSchema } from 'features/AuthByUsername'
 import {
     type AnyAction,
-    type CombinedState, type Dispatch,
+    type CombinedState,
     type EnhancedStore,
     type Reducer,
     type ReducersMapObject
@@ -40,6 +40,7 @@ export interface ThunkExtraArg {
 }
 
 export interface ThunkConfig<T> {
+    state: StateSchema
     rejectValue: T
     extra: ThunkExtraArg
 }

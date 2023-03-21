@@ -27,7 +27,7 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
     const onLogout = useCallback(() => {
         dispatch(userActions.logout())
     }, [dispatch])
-    console.log(authData)
+
     if (authData) {
         return <div className={classNames(cls.Navbar, {}, [className])}>
             <Button theme={ButtonTheme.BACKGROUND_INVERTED}
