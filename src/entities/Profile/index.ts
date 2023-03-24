@@ -11,12 +11,13 @@ export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm'
 export type {
     Profile,
     ProfileSchema
-} from 'entities/Profile/model/types/profile'
+} from './model/types/profile'
 
 export {
     profileActions,
     profileReducer
-} from 'entities/Profile/model/slice/profileSlice'
+} from './model/slice/profileSlice'
 
-export { fetchProfileData } from 'entities/Profile/model/services/fetchProfileData/fetchProfileData'
-export { updateProfileData } from 'entities/Profile/model/services/updateProfileData/updateProfileData'
+export { fetchProfileData } from './model/services/fetchProfileData/fetchProfileData'
+export { updateProfileData } from './model/services/updateProfileData/updateProfileData'
+export { ProfileCard } from './ui/ProfileCard/ProfileCard'
