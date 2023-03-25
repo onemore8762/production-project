@@ -12,7 +12,7 @@ import {
     profileActions,
     profileReducer, ValidateProfileError
 } from 'entities/Profile'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { ProfileCard } from 'entities/Profile/ui/ProfileCard/ProfileCard'
 import { useSelector } from 'react-redux'
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'

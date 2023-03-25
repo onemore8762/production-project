@@ -6,7 +6,7 @@ import { Text } from 'shared/ui/Text/Text'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 interface ProfilePageHeaderProps {
     className?: string
