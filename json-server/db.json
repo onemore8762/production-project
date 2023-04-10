@@ -14,13 +14,18 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news dsadsadsadsadsadasdsa dsadsada ddsad",
       "subtitle": "Что нового в JS за 2022 год",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
+      "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE",
+        "TEST!",
+        "TEST@2",
+        "TEST3"
       ],
       "blocks": [
         {
@@ -138,6 +143,12 @@
       "userId": "2",
       "text": "привет",
       "id": "YRj4Qtc"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "fgdfgfdg",
+      "id": "h5o_YQG"
     }
   ],
   "users": [
