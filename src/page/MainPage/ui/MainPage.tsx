@@ -1,6 +1,7 @@
 import React, { type ReactElement, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Input } from 'shared/ui/Input/Input'
+import { Page } from 'shared/ui/Page/Page'
 
 const MainPage = (): ReactElement => {
     const { t } = useTranslation('main')
@@ -10,12 +11,12 @@ const MainPage = (): ReactElement => {
         setValue(val)
     }
     return (
-        <div>
+        <Page>
             {t('Главная страница')}
             <Input value={value}
                    placeholder='Введите текст'
                    onChange={onChange}/>
-        </div>
+        </Page>
     )
 }
 

@@ -29,18 +29,18 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
     }, [dispatch])
 
     if (authData) {
-        return <div className={classNames(cls.Navbar, {}, [className])}>
+        return <header className={classNames(cls.Navbar, {}, [className])}>
             <Button theme={ButtonTheme.BACKGROUND_INVERTED}
                     className={cls.links}
                     onClick={onLogout}
             >
                 {t('Выйти')}
             </Button>
-        </div>
+        </header>
     }
 
     return (
-        <div className={classNames(cls.Navbar, {}, [className])}>
+        <header className={classNames(cls.Navbar, {}, [className])}>
             <Button theme={ButtonTheme.BACKGROUND_INVERTED}
                     className={cls.links}
                     onClick={onShowModal}
@@ -52,7 +52,7 @@ export const Navbar = memo(({ className = '' }: NavbarProps) => {
                     isOpen={isAuthModal}
                     onClose={onCloseModal}
             />
-        </div>
+        </header>
     )
 }
 )
