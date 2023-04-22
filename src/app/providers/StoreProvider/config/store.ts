@@ -1,9 +1,10 @@
 import { type CombinedState, configureStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit'
-import { type StateSchema, type ThunkExtraArg } from 'app/providers/StoreProvider/config/StateSchema'
+import { type StateSchema, type ThunkExtraArg } from './StateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
-import { createReducerManager } from 'app/providers/StoreProvider/config/reducerManager'
+import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
+import { uiReducer } from 'features/UI'
 
 export function createReduxStore (
     initialState?: StateSchema,
@@ -12,7 +13,8 @@ export function createReduxStore (
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
-        user: userReducer
+        user: userReducer,
+        ui: uiReducer
     }
 
     const reducerManager = createReducerManager(rootReducers)
