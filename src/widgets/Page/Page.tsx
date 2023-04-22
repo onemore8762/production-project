@@ -7,7 +7,7 @@ import { useLocation } from 'react-router-dom'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useSelector } from 'react-redux'
 import { type StateSchema } from 'app/providers/StoreProvider'
-import { useThrottle } from 'shared/lib/useThrottle/useThrottle'
+import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle'
 import { getUIScrollByPath, uiActions } from 'features/UI'
 
 interface PageProps {
@@ -35,7 +35,6 @@ export const Page = (props: PageProps) => {
     })
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        console.log('scroll', e.currentTarget.scrollTop)
         dispatch(uiActions.setScrollPosition({
             position: e.currentTarget.scrollTop,
             path: pathname
@@ -48,7 +47,7 @@ export const Page = (props: PageProps) => {
                  className={classNames(cls.Page, {}, [className])}
         >
             {children}
-            <div ref={triggerRef}/>
+            {onScrollEnd ? <div className={cls.trigger} ref={triggerRef}/> : null}
         </section>
     )
 }
