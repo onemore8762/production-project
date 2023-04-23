@@ -11,9 +11,9 @@ import {
 import { type ProfileSchema } from 'entities/Profile'
 import { type AxiosInstance } from 'axios'
 import { type ArticleDetailsSchema } from 'entities/Article'
-import { type ArticleDetailsCommentsSchema } from 'page/ArticlesDetailsPage'
+import { type ArticleDetailsPageSchema } from 'pages/ArticlesDetailsPage'
 import { type AddCommentFormSchema } from 'features/addCommentForm'
-import { type ArticlesPageSchema } from 'page/ArticlesPage'
+import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type UISchema } from 'features/UI'
 
 export interface StateSchema {
@@ -24,9 +24,9 @@ export interface StateSchema {
     loginForm?: LoginSchema
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
-    articleDetailsComments?: ArticleDetailsCommentsSchema
     addCommentForm?: AddCommentFormSchema
     articlesPage?: ArticlesPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 }
 
 export type StateSchemaKey = keyof StateSchema
