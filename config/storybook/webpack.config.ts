@@ -9,7 +9,9 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
         build: '',
         html: '',
         entry: '',
-        src: path.resolve(__dirname, '..', '..', 'src')
+        src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: path.resolve(__dirname, 'public', 'locales'),
+        buildLocales: path.resolve(__dirname, 'build', 'locales')
     }
 
     // @ts-ignore
