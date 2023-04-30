@@ -23,7 +23,8 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
-        'react-hooks'
+        'react-hooks',
+        'fsd-stabilized'
     ],
     overrides: [
         {
@@ -71,7 +72,8 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         '@typescript-eslint/ban-ts-comment': 'warn',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
-        '@typescript-eslint/array-type': 'off'
+        '@typescript-eslint/array-type': 'off',
+        'fsd-stabilized/path-checker': 'error'
         // '@typescript-eslint/no-non-null-assertion': 'off',
         // '@typescript-eslint/no-unnecessary-type-assertion': 'off'
     },

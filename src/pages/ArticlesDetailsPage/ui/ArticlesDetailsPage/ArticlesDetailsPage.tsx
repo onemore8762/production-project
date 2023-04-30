@@ -23,7 +23,7 @@ import {
 import { articleDetailsPageReducer } from '../../model/slices'
 import {
     ArticleDetailsPageHeader
-} from 'pages/ArticlesDetailsPage/ui/ArticleDetailsPageHeader/ArticleDetailsPageHeader'
+} from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
 
 interface ArticlesDetailsPageProps {
     className?: string

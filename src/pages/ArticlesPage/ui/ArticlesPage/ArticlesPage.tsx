@@ -17,7 +17,7 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { ArticlePageFilters } from 'pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters'
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters'
 import { useSearchParams } from 'react-router-dom'
 
 interface ArticlesPageProps {
