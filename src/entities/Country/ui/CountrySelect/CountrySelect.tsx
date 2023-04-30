@@ -1,8 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { Select } from 'shared/ui/Select/Select'
 import { Country } from '../../modal/types/country'
 import { useCallback } from 'react'
+import { ListBox } from 'shared/ui/ListBox/ListBox'
 
 interface CountrySelectProps {
     className?: string
@@ -32,14 +31,13 @@ export const CountrySelect = (props: CountrySelectProps) => {
         onChange?.(value as Country)
     }, [onChange])
 
-    return (
-        <Select className={classNames('', {}, [className])}
-                label={t('Укажите страну')}
-                options={options}
-                value={value}
-                onChange={onChangeHandler}
-                readonly={readonly}
-        />
-
-    )
+    return <ListBox onChange={onChangeHandler}
+                    direction={'top'}
+                    className={className}
+                    readonly={readonly}
+                    label={t('Укажите страну')}
+                    defaultValue={t('Укажите страну')}
+                    value={value}
+                    items={options}
+    />
 }

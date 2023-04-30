@@ -1,8 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { Select } from 'shared/ui/Select/Select'
 import { Currency } from '../../modal/types/currency'
 import { useCallback } from 'react'
+import { ListBox } from 'shared/ui/ListBox/ListBox'
 
 interface CurrencySelectProps {
     className?: string
@@ -30,14 +29,13 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
         onChange?.(value as Currency)
     }, [onChange])
 
-    return (
-        <Select className={classNames('', {}, [className])}
-                label={t('Укажите валюту')}
-                options={options}
-                value={value}
-                onChange={onChangeHandler}
-                readonly={readonly}
-        />
-
-    )
+    return <ListBox onChange={onChangeHandler}
+                    className={className}
+                    readonly={readonly}
+                    label={t('Укажите страну')}
+                    defaultValue={t('Укажите валюту')}
+                    value={value}
+                    direction={'top'}
+                    items={options}
+    />
 }
