@@ -32,7 +32,7 @@ export const CountrySelect = (props: CountrySelectProps) => {
     }, [onChange])
 
     return <ListBox onChange={onChangeHandler}
-                    direction={'top'}
+                    direction={'top_right'}
                     className={className}
                     readonly={readonly}
                     label={t('Укажите страну')}

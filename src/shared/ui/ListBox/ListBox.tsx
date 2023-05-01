@@ -4,13 +4,13 @@ import cls from './ListBox.module.scss'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button } from '../Button/Button'
 import { HStack } from '../Stack/index'
+import { type DropdownDirection } from 'shared/types/ui'
 
 export interface ListBoxItem {
     value: string
     content: ReactNode
     disabled?: boolean
 }
-type DropdownDirection = 'top' | 'bottom'
 
 interface ListBoxProps {
     items?: ListBoxItem[]
@@ -31,7 +31,7 @@ export function ListBox (props: ListBoxProps) {
         defaultValue,
         onChange,
         readonly,
-        direction = 'bottom',
+        direction = 'bottom_right',
         label
     } = props
 

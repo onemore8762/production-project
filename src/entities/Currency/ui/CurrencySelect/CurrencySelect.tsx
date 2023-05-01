@@ -35,7 +35,7 @@ export const CurrencySelect = (props: CurrencySelectProps) => {
                     label={t('Укажите страну')}
                     defaultValue={t('Укажите валюту')}
                     value={value}
-                    direction={'top'}
+                    direction={'top_right'}
                     items={options}
     />
 }
