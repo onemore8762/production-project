@@ -50,17 +50,19 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page onScrollEnd={onLoadNextPart}
-                  className={classNames(cls.ArticlesPage, {}, [className])}
-            >
-                <ArticlePageFilters/>
-                <ArticleList
+            {/* <Page onScrollEnd={onLoadNextPart} */}
+            {/*      className={classNames(cls.ArticlesPage, {}, [className])} */}
+            {/* > */}
+            {/* <ArticlePageFilters/> */}
+
+            <ArticleList
                     isLoading={isLoading}
                     view={view}
                     articles={articles}
                     className={cls.list}
-                />
-            </Page>
+                    onLoadNextPart={onLoadNextPart}
+            />
+            {/* </Page> */}
         </DynamicModuleLoader>
     )
 }
