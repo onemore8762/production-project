@@ -4,10 +4,9 @@
     }
 }
 
-.SMALL {
-    .card {
-        margin: 30px;
-    }
+.ArticleList {
+    width: 100%;
+    padding-top: 25px;
 }
 
 .itemsWrapper {
@@ -15,7 +14,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 8px;
-    margin: 0 30px;
+    margin: 30px;
 }
 
 .skeleton {
@@ -28,7 +27,6 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 8px;
-    margin-right: 30px;
 
     @media (max-width: 1024px) {
         width: 50%;

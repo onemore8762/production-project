@@ -1,5 +1,4 @@
 import { memo, useCallback } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticlesPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { ArticleList } from 'entities/Article'
@@ -8,8 +7,6 @@ import { articlesPageReducer, getArticles } from '../../model/slices/articlesPag
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { useSelector } from 'react-redux'
-
-import { Page } from 'widgets/Page/Page'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import {
@@ -17,7 +14,6 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters'
 import { useSearchParams } from 'react-router-dom'
 
 interface ArticlesPageProps {
@@ -50,11 +46,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            {/* <Page onScrollEnd={onLoadNextPart} */}
-            {/*      className={classNames(cls.ArticlesPage, {}, [className])} */}
-            {/* > */}
-            {/* <ArticlePageFilters/> */}
-
             <ArticleList
                     isLoading={isLoading}
                     view={view}
@@ -62,7 +53,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                     className={cls.list}
                     onLoadNextPart={onLoadNextPart}
             />
-            {/* </Page> */}
         </DynamicModuleLoader>
     )
 }

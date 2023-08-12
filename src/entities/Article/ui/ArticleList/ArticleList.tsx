@@ -5,7 +5,7 @@ import { type Article, type ArticleView } from '../../model/types/article'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
 import { Text, TextSize } from 'shared/ui/Text/Text'
-import React, { type HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState } from 'react'
+import React, { type FC, type HTMLAttributeAnchorTarget, memo, useEffect, useRef, useState } from 'react'
 import { Virtuoso, VirtuosoGrid, type VirtuosoGridHandle } from 'react-virtuoso'
 import { ArticlePageFilters } from 'pages/ArticlesPage/ui/ArticlePageFilters/ArticlePageFilters'
 import { ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX } from 'shared/const/localstorage'
@@ -40,7 +40,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const virtuosoGridRef = useRef<VirtuosoGridHandle>(null)
 
     useEffect(() => {
-        const paged = sessionStorage.getItem(ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX) || 1
+        const paged = Number(sessionStorage?.getItem(ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX)) || 1
         setSelectedArticleId(+paged)
     }, [])
 
@@ -49,17 +49,22 @@ export const ArticleList = memo((props: ArticleListProps) => {
         if (view === 'SMALL') {
             timeoutId = setTimeout(() => {
                 if (virtuosoGridRef.current) {
-
+                    virtuosoGridRef.current.scrollToIndex(selectedArticleId)
                 }
-            })
+            }, 300)
         }
-    })
+
+        return () => {
+            clearTimeout(timeoutId)
+        }
+    }, [selectedArticleId, view])
 
     const renderArticle = (index: number, article: Article) => {
         return (
             <ArticleListItem
                 target={target}
                 article={article}
+                index={index}
                 view={view}
                 key={article.id}
                 className={cls.card}
@@ -78,6 +83,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
         return null
     })
 
+    // @ts-ignore
+    const ItemContainerComp: FC<{ height: number, width: number, index: number }> = ({ height, width, index }) => (
+        <ArticleListItemSkeleton view={view} key={index} className={cls.card}/>
+    )
+
     if (!isLoading && !articles?.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
@@ -87,9 +97,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])} style={{ width: '100%' }}>
-            {/* {(articles?.length || 0) > 0 ? articles?.map((el) => renderArticle(1, el)) : null} */}
-            {/* {isLoading && getSkeletons()} */}
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {view === 'BIG'
                 ? (
                     <Virtuoso
@@ -106,7 +114,21 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
                     </Virtuoso>
                 )
-                : (<VirtuosoGrid ref={virtuosoGridRef}
+                : (<VirtuosoGrid
+                        ref={virtuosoGridRef}
+                        totalCount={articles?.length}
+                        components={{
+                            Header,
+                            ScrollSeekPlaceholder: ItemContainerComp
+                        }}
+                        endReached={onLoadNextPart}
+                        data={articles}
+                        itemContent={renderArticle}
+                        listClassName={cls.itemsWrapper}
+                        scrollSeekConfiguration={{
+                            enter: (velocity) => Math.abs(velocity) > 500,
+                            exit: (velocity) => Math.abs(velocity) < 30
+                        }}
                 >
 
                 </VirtuosoGrid>
