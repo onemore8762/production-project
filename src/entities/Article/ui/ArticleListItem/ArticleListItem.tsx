@@ -12,14 +12,12 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { type HTMLAttributeAnchorTarget } from 'react'
 import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX } from 'shared/const/localstorage'
 
 interface ArticleListItemProps {
     className?: string
     article?: Article
     view: ArticleView
     target?: HTMLAttributeAnchorTarget
-    index?: number
 }
 
 export const ArticleListItem = (props: ArticleListItemProps) => {
@@ -27,15 +25,9 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
         className,
         view,
         article,
-        target,
-        index
+        target
     } = props
     const { t } = useTranslation()
-
-    const handleButtonClick = () => {
-        console.log()
-        sessionStorage.setItem(ARTICLE_LIST_ITEM_LOCALSTORAGE_IDX, JSON.stringify(index))
-    }
 
     const types = <Text text={article?.type.join(', ')} className={cls.types}/>
     const views = (
@@ -63,7 +55,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                         <AppLink target={target}
                                  to={`${RoutePath.article_details}${article?.id || ''}`}
                         >
-                            <Button theme={ButtonTheme.OUTLINE} onClick={handleButtonClick}>
+                            <Button theme={ButtonTheme.OUTLINE}>
                                 {t('Читать далее...')}
                             </Button>
                         </AppLink>
@@ -76,7 +68,7 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink target={target} to={`${RoutePath.article_details}${article?.id || ''}`} onClick={handleButtonClick}
+        <AppLink target={target} to={`${RoutePath.article_details}${article?.id || ''}`}
                  className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
         >
             <Card className={cls.card}>

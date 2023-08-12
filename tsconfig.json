@@ -1,4 +1,5 @@
 {
+  "exclude": ["./scripts"],
   "compilerOptions": {
     "outDir": "./dist/",
     // Подсвечивает все места где не указан тип
@@ -38,7 +39,7 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  },
+  }
 //  "include": [
 //    "./config/**/*.tsx",
 //    "./config/**/*.ts",

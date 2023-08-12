@@ -4,6 +4,12 @@
     }
 }
 
+.SMALL {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
 .ArticleList {
     width: 100%;
     padding-top: 25px;

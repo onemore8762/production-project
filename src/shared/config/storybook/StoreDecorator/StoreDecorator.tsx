@@ -3,12 +3,12 @@ import { type Story } from '@storybook/react'
 import { type ReactElement } from 'react'
 import { type StateSchema, StoreProvider } from 'app/providers/StoreProvider'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
-import { profileReducer } from 'entities/Profile'
 import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { addCommentFormReducer } from 'features/addCommentForm/model/slices/addCommentFormSlice'
 import { uiReducer } from 'features/UI'
 import { articleDetailsPageReducer } from 'pages/ArticlesDetailsPage/model/slices'
+import { profileReducer } from 'features/editableProfileCard/model/slice/profileSlice'
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
