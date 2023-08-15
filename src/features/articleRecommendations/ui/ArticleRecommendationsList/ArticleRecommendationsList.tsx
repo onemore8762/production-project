@@ -15,10 +15,9 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsPro
     const { t } = useTranslation()
 
     const { isLoading, data: articles, error } = useArticleRecommendationsList(3)
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         return null
     }
-    console.log(articles)
 
     return (
         <VStack gap={'8'} className={classNames('', {}, [className])} >
