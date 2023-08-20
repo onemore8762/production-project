@@ -601,6 +601,12 @@
       "userId": "1",
       "text": "check",
       "id": "eKEZXgu"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "gfgf",
+      "id": "fa0EzlD"
     }
   ],
   "users": [
@@ -608,21 +614,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cs14.pikabu.ru/post_img/2023/02/13/8/1676295806139337963.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": ["USER"],
+      "role": [
+        "USER"
+      ],
       "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295972138872283.png"
     },
     {
       "id": "2",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://cs14.pikabu.ru/post_img/big/2023/02/13/8/1676295972138872283.png"
     }
   ],
