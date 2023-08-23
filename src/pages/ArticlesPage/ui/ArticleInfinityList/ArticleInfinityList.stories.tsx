@@ -4,7 +4,7 @@ import { type ComponentMeta, type ComponentStory } from '@storybook/react'
 import { ArticleInfinityList } from './ArticleInfinityList'
 
 export default {
-    title: '/ArticleInfinityList',
+    title: 'pages/ArticlesPage/ArticleInfinityList',
     component: ArticleInfinityList,
     argTypes: {
         backgroundColor: { control: 'color' }

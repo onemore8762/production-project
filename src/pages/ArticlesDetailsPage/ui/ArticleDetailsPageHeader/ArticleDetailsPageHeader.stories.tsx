@@ -17,3 +17,4 @@ const Template: ComponentStory<typeof ArticleDetailsPageHeader> = () => <Article
 
 export const Normal = Template.bind({})
 Normal.args = {}
+Normal.decorators = [StoreDecorator({})]
