@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { Suspense, useCallback } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { Text, TextSize } from 'shared/ui/Text/Text'
@@ -11,10 +11,11 @@ import { addCommentForArticle } from '../../model/services/addCommentForArticle/
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { VStack } from 'shared/ui/Stack'
+import { Loader } from 'shared/ui/Loader/Loader'
 
 interface ArticleDetailsCommentsProps {
     className?: string
-    id: string
+    id?: string
 }
 
 export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
@@ -39,7 +40,9 @@ export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
                   className={''}
                   title={t('Комментарий')}
             />
-            <AddCommentForm onSendComment={onSendComment}/>
+            <Suspense fallback={<Loader/>}>
+                <AddCommentForm onSendComment={onSendComment}/>
+            </Suspense>
             <CommentList
                 comments={comments}
                 isLoading={commentsIsLoading}
