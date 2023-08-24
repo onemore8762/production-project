@@ -10,9 +10,9 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { type HTMLAttributeAnchorTarget } from 'react'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { ArticleBlockType } from '../../model/consts/consts'
+import { RoutePath } from 'shared/config/routeConfig/type'
 
 interface ArticleListItemProps {
     className?: string
