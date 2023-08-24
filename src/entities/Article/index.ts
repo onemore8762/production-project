@@ -11,4 +11,6 @@ export { ArticleList } from './ui/ArticleList/ArticleList'
 export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema'
 
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails'
-export { type Article, type ArticleView, ArticleSortField, ArticleType } from './model/types/article'
+export { type Article, type ArticleView } from './model/types/article'
+export { ArticleType } from './model/consts/consts'
+export { ArticleSortField } from './model/consts/consts'

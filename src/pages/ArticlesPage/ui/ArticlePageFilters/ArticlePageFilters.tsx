@@ -4,7 +4,7 @@ import cls from './ArticlePageFilters.module.scss'
 import { useTranslation } from 'react-i18next'
 import {
     type ArticleSortField,
-    ArticleSortSelector,
+    ArticleSortSelector, type ArticleType,
     ArticleTypeTabs,
     type ArticleView,
     ArticleViewSelector
@@ -24,7 +24,6 @@ import { Input } from 'shared/ui/Input/Input'
 import { type SortOrder } from 'shared/types'
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList'
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce'
-import { type ArticleType } from 'entities/Article/model/types/article'
 
 interface ArticlePageFiltersProps {
     className?: string
