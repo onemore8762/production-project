@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Input } from 'shared/ui/Input/Input'
 import { Page } from 'widgets/Page/Page'
 import { HStack } from 'shared/ui/Stack/index'
-import { ListBox } from 'shared/ui/ListBox/ListBox'
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox'
 
 const MainPage = (): ReactElement => {
     const { t } = useTranslation('main')
