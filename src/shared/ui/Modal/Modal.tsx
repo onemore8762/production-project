@@ -1,7 +1,9 @@
-import { type FC, type MouseEvent, type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
+import { type FC, type ReactNode, useCallback, useEffect, useRef, useState } from 'react'
 import { classNames, type Mods } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
 import { Portal } from '../Portal/Portal'
+import { useTheme } from 'app/providers/ThemeProvider'
+import { Overlay } from '../Overlay/Overlay'
 
 interface ModalProps {
     className?: string
@@ -21,6 +23,8 @@ export const Modal: FC<ModalProps> = (
     }) => {
     const [isClosing, setIsClosing] = useState(false)
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
+
+    const { theme } = useTheme()
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -47,9 +51,6 @@ export const Modal: FC<ModalProps> = (
         }
     }, [isOpen, onKeyDown])
 
-    const onContentClick = (e: MouseEvent): void => {
-        e.stopPropagation()
-    }
     if (!isOpen) {
         return null
     }
@@ -60,11 +61,10 @@ export const Modal: FC<ModalProps> = (
     }
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
-                        {children}
-                    </div>
+            <div className={classNames(cls.Modal, mods, [className, theme, 'app_modal'])}>
+                <Overlay onClick={closeHandler}/>
+                <div className={cls.content}>
+                    {children}
                 </div>
             </div>
         </Portal>
