@@ -1,6 +1,6 @@
-import { type ThunkConfig } from 'app/providers/StoreProvider'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { createAsyncThunk } from '@reduxjs/toolkit'
-import { type Article, ArticleType } from 'entities/Article'
+import { type Article, ArticleType } from '@/entities/Article'
 import {
     getArticlesPageLimit,
     getArticlesPageNum,
@@ -9,7 +9,7 @@ import {
     getArticlesPageSort,
     getArticlesPageType
 } from '../../selectors/articlesPageSelectors'
-import { addQueryParams } from 'shared/lib/url/addQueryParams/addQueryParams'
+import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams'
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface FetchArticlesListProps {

@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { ArticleList } from 'entities/Article'
+import { ArticleList } from '@/entities/Article'
 import { useSelector } from 'react-redux'
 import { getArticles } from '../../model/slices/articlesPageSlice'
 import {
@@ -8,7 +8,7 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
-import { Text } from 'shared/ui/Text/Text'
+import { Text } from '@/shared/ui/Text/Text'
 
 interface ArticleInfinityListProps {
     className?: string

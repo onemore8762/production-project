@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { type Article } from '../../types/article'
-import { type ThunkConfig } from 'app/providers/StoreProvider'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
 
 // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
 export const fetchArticleById = createAsyncThunk<Article, string | undefined, ThunkConfig<string>>(
