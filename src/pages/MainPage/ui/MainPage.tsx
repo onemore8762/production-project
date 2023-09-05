@@ -4,6 +4,8 @@ import { Input } from '@/shared/ui/Input/Input'
 import { Page } from '@/widgets/Page/Page'
 import { HStack } from '@/shared/ui/Stack/index'
 import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox'
+import { StarRating } from '@/shared/ui/StarRating/StarRating'
+import { RatingCard } from '@/entities/Rating'
 
 const MainPage = (): ReactElement => {
     const { t } = useTranslation('main')
@@ -18,6 +20,8 @@ const MainPage = (): ReactElement => {
             <Input value={value}
                    placeholder='Введите текст'
                    onChange={onChange}/>
+            <StarRating size={50}/>
+            <RatingCard title={'Как вам статья?'} feedbackTitle={'оставьте свой отзыв'} hasFeedback></RatingCard>
             <HStack>
                 <ListBox
                     defaultValue={'Выберите значение'}
