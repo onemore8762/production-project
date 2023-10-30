@@ -14,9 +14,13 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
         buildLocales: path.resolve(__dirname, 'build', 'locales')
     }
 
-    // @ts-ignore
-    config.resolve.modules = [paths.src, 'node_modules']
-    config.resolve?.extensions?.push('.tsx', '.ts')
+    config.resolve!.modules = [paths.src, 'node_modules']
+    config.resolve!.extensions?.push('.tsx', '.ts')
+    config.resolve!.alias = {
+        ...config.resolve!.alias,
+        '@': paths.src
+    }
+
     // @ts-ignore
     config.module?.rules = config.module?.rules?.map((rule: RuleSetRule) => {
         if (/svg/.test(rule.test as string)) {
@@ -36,7 +40,6 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
         __API__: JSON.stringify('http://testapi.ru'),
         __PROJECT__: JSON.stringify('storybook')
     }))
-    // @ts-ignore
-    config.resolve!.alias = { '@': paths.src }
+
     return config
 }

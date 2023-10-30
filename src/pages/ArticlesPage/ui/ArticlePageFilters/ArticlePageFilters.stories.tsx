@@ -5,7 +5,7 @@ import { ArticlePageFilters } from './ArticlePageFilters'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator'
 
 export default {
-    title: 'page/Article/ArticlePageFilters',
+    title: 'pages/Article/ArticlePageFilters',
     component: ArticlePageFilters,
     argTypes: {
         backgroundColor: { control: 'color' }
