@@ -1,4 +1,3 @@
-
 export const enum AppRoutes {
     MAIN = 'main',
     ABOUT = 'about',

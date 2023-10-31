@@ -12,7 +12,8 @@ import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleT
 import { type HTMLAttributeAnchorTarget } from 'react'
 import { AppLink } from '@/shared/ui/AppLink/AppLink'
 import { ArticleBlockType } from '../../model/consts/consts'
-import { RoutePath } from '@/shared/config/routeConfig/type'
+
+import { RoutePath } from '@/shared/const/router'
 
 interface ArticleListItemProps {
     className?: string
