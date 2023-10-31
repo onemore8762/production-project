@@ -7,7 +7,7 @@ import { articlesPageReducer } from '../../model/slices/articlesPageSlice'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
-import { Page } from '@/widgets/Page/Page'
+import { Page } from '@/widgets/Page'
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage'
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage'
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters'
