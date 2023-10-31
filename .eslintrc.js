@@ -73,7 +73,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-comment': 'warn',
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/array-type': 'off',
-        'fsd-stabilized/path-checker': 'error'
+        'fsd-stabilized/path-checker': ['error', {alias: '@'}]
         // '@typescript-eslint/no-non-null-assertion': 'off',
         // '@typescript-eslint/no-unnecessary-type-assertion': 'off'
     },
