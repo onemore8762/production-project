@@ -13,12 +13,13 @@ export default ({ config }: { config: webpack.Configuration }): webpack.Configur
         locales: path.resolve(__dirname, 'public', 'locales'),
         buildLocales: path.resolve(__dirname, 'build', 'locales')
     }
-
-    config.resolve!.modules = [paths.src, 'node_modules']
-    config.resolve!.extensions?.push('.tsx', '.ts')
-    config.resolve!.alias = {
-        ...config.resolve!.alias,
-        '@': paths.src
+    if (config.resolve) {
+        config.resolve.modules = [paths.src, 'node_modules']
+        config.resolve.extensions?.push('.tsx', '.ts')
+        config.resolve.alias = {
+            ...config.resolve?.alias,
+            '@': paths.src
+        }
     }
 
     // @ts-ignore

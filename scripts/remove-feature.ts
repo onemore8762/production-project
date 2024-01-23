@@ -84,6 +84,7 @@ const getAttributeNodeByName = (
     jsxAttributes: JsxAttribute[],
     name: string
 ) => {
+    // @ts-ignore
     return jsxAttributes.find((node) => node.getName() === name)
 }
 

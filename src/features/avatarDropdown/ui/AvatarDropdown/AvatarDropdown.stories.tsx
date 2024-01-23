@@ -17,4 +17,11 @@ export const Primary = Template.bind({})
 
 Primary.args = {
 }
-Primary.decorators = [StoreDecorator({})]
+Primary.decorators = [StoreDecorator({
+    user: {
+        authData: {
+            id: '1',
+            username: 'Denis'
+        }
+    }
+})]

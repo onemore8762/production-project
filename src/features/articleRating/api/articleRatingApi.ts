@@ -24,6 +24,7 @@ const articleRatingApi = rtkApi.injectEndpoints({
                 }
             })
         }),
+        // eslint-disable-next-line @typescript-eslint/no-invalid-void-type
         rateArticle: build.mutation<void, RateArticleArg>({
             query: (arg) => ({
                 url: '/article-ratings',

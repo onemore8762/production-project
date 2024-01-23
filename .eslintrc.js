@@ -4,6 +4,7 @@ module.exports = {
         es2021: true,
         jest: true
     },
+    ignorePatterns: ['**/scripts'],
     extends: [
         'plugin:react/recommended',
         'standard-with-typescript',
@@ -74,6 +75,13 @@ module.exports = {
         '@typescript-eslint/prefer-ts-expect-error': 'off',
         '@typescript-eslint/array-type': 'off',
         'fsd-stabilized/path-checker': ['error', { alias: '@' }],
+        'fsd-stabilized/layer-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: ['**/StoreProvider', '**/testing', '**/scripts']
+            }
+        ],
         'fsd-stabilized/public-api-imports': [
             'error',
             {
