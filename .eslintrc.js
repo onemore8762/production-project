@@ -25,7 +25,8 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
-        'fsd-stabilized'
+        'fsd-stabilized',
+        'unused-imports'
     ],
     overrides: [
         {
@@ -38,6 +39,7 @@ module.exports = {
     ],
     rules: {
         indent: 'off',
+        'unused-imports/no-unused-imports': 'error',
         'react/jsx-indent-props': [2, 'first'],
         'react/jsx-indent': ['error', 4], // 4 - spaces
         '@typescript-eslint/indent': ['error', 4, { ignoredNodes: ['JSXAttribute'] }],
